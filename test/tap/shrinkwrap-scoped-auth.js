@@ -61,7 +61,6 @@ test('authed npm install with shrinkwrapped scoped package', function (t) {
       if (results) {
         var installedversion = {
           'version': '1.3.1',
-          'from': '>=1.3.1 <2',
           'resolved': 'http://localhost:1337/scoped-underscore/-/scoped-underscore-1.3.1.tgz'
         }
         t.isDeeply(results.dependencies['@scoped/underscore'], installedversion, '@scoped/underscore installed')

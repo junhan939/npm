@@ -64,9 +64,9 @@ test('authed npm install with tarball not on registry', function (t) {
       }
 
       if (results) {
+        delete results.dependencies['@scoped/underscore'].from
         var installedversion = {
           'version': '1.3.1',
-          'from': '>=1.3.1 <2',
           'resolved': tarballURL
         }
         t.isDeeply(results.dependencies['@scoped/underscore'], installedversion, '@scoped/underscore installed')
@@ -97,7 +97,6 @@ var shrinkwrap = {
   dependencies: {
     '@scoped/underscore': {
       resolved: tarballURL,
-      from: '>=1.3.1 <2',
       version: '1.3.1'
     }
   }
